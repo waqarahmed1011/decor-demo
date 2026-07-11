@@ -1,9 +1,31 @@
+import { SiteHeader } from "@/components/SiteHeader";
+import { HeroSection } from "@/components/HeroSection";
+import { WhoWeAre } from "@/components/WhoWeAre";
+import { TaglineBand } from "@/components/TaglineBand";
+import { ServicesSection } from "@/components/ServicesSection";
+import { ExpertiseSection } from "@/components/ExpertiseSection";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { EventsSection } from "@/components/EventsSection";
+import { Testimonials } from "@/components/Testimonials";
+import { SiteFooter } from "@/components/SiteFooter";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <SiteHeader />
+      <main className="flex-1">
+        <HeroSection />
+        <WhoWeAre />
+        <TaglineBand />
+        <ServicesSection />
+        <ExpertiseSection />
+        <WhyChooseUs />
+        <EventsSection />
+        <Testimonials />
+      </main>
+      <SiteFooter />
+      <WhatsAppButton />
+    </>
   );
 }
