@@ -9,7 +9,6 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { EventsSection } from "@/components/EventsSection";
 import { Testimonials } from "@/components/Testimonials";
 import { SiteFooter } from "@/components/SiteFooter";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
         <Testimonials />
       </main>
       <SiteFooter />
-      <WhatsAppButton />
     </>
   );
 }
