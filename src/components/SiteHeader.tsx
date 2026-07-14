@@ -35,10 +35,10 @@ export function SiteHeader() {
         )}
       >
         {/* Logo */}
-        <a href="#home" className="relative block shrink-0" aria-label="The Perfect Affair — home">
+        <a href="#home" className="relative block shrink-0" aria-label="[Your Business Name] — home">
           <Image
-            src="/images/tpa-logo-circle.png"
-            alt="The Perfect Affair"
+            src="/images/festive-flair-logo.png"
+            alt="Festive Flair Event Planner"
             width={128}
             height={128}
             priority

@@ -9,9 +9,11 @@ interface RevealProps {
   /** transition-delay in ms for staggered reveals */
   delay?: number;
   as?: ElementType;
+  /** Lighter, faster variant for cards and dense grids */
+  card?: boolean;
 }
 
-export function Reveal({ children, className, delay = 0, as }: RevealProps) {
+export function Reveal({ children, className, delay = 0, as, card }: RevealProps) {
   const Tag = (as ?? "div") as ElementType;
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -37,7 +39,7 @@ export function Reveal({ children, className, delay = 0, as }: RevealProps) {
   return (
     <Tag
       ref={ref}
-      className={cn("tpa-reveal", visible && "is-visible", className)}
+      className={cn("site-reveal", card && "site-reveal--card", visible && "is-visible", className)}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

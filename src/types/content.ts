@@ -18,12 +18,13 @@ export interface WhyCard {
 
 export interface EventItem {
   label: string;
-  icon: string;
+  icon: string; // Lucide icon component name
 }
 
 export interface Testimonial {
   quote: string;
   name: string;
+  eventType?: string;
 }
 
 export interface Stat {

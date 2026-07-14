@@ -4,26 +4,26 @@ import { stats } from "@/lib/content";
 
 export function ExpertiseSection() {
   return (
-    <section className="overflow-hidden bg-white py-16 md:py-24">
+    <section className="overflow-hidden bg-background py-16 md:py-24">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
         {/* Text */}
         <Reveal>
           <p className="mb-4 text-[18px] uppercase tracking-[0.05em] text-black">Expertise</p>
           <h2 className="mb-6 text-[38px] font-light leading-[1.1] text-black md:text-[56px]">
-            Dual excellence in event crafting
+            Excellence  in event spaces
           </h2>
           <p className="max-w-[520px] text-[17px] leading-[26px] text-black/90">
-            With a wealth of experience exceeding four years, we bring seasoned proficiency to every
-            event providing the <strong className="font-semibold">best event management in Bangalore</strong>,
-            ensuring a seamless and polished execution. And, our broad network of trusted vendors,
-            including skilled photographers and makeup artists, ensures access to top-tier
-            professionals, enhancing the quality of your event.
+            With years of hands-on experience, we bring seasoned proficiency to every event,
+            ensuring a seamless and polished execution from concept to cleanup. Our broad network of
+            trusted vendors — including skilled photographers, caterers, and makeup artists — ensures
+            access to top-tier professionals, elevating the quality of your celebration.
           </p>
 
-          <div className="mt-10 flex gap-14">
+          <div className="mt-10 flex gap-8">
             {stats.map((stat) => (
               <div key={stat.value}>
-                <div className="text-[54px] font-light leading-none text-black md:text-[74px]">
+                <div className="mb-3 h-[2px] w-7 rounded-full bg-brand-accent" />
+                <div className="text-[48px] font-light leading-none text-black md:text-[54px] lg:text-[70px]">
                   {stat.value}
                 </div>
                 <div className="mt-3 whitespace-pre-line text-[17px] leading-[22px] text-black">
@@ -34,25 +34,23 @@ export function ExpertiseSection() {
           </div>
         </Reveal>
 
-        {/* Layered images */}
+        {/* Images */}
         <Reveal delay={120}>
-          <div className="relative min-h-[420px] md:min-h-[520px]">
-            <div className="ml-auto w-[80%] overflow-hidden rounded-[14px]">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative h-[360px] overflow-hidden rounded-[16px] shadow-[0_16px_48px_rgba(0,0,0,0.13)]">
               <Image
-                src="/images/dual-ex1.jpg"
-                alt="Team joining hands"
-                width={600}
-                height={460}
-                className="h-full w-full object-cover"
+                src="/images/decorpic3.jpg"
+                alt="Clear tent reception with hanging floral installation"
+                fill
+                className="object-cover"
               />
             </div>
-            <div className="absolute bottom-0 left-0 w-[62%] overflow-hidden rounded-[18px] shadow-[0_25px_60px_rgba(0,0,0,0.28)]">
+            <div className="relative mt-10 h-[360px] overflow-hidden rounded-[16px] shadow-[0_16px_48px_rgba(0,0,0,0.13)]">
               <Image
-                src="/images/dual-ex2.jpg"
-                alt="Bespoke stationery and invitation design"
-                width={520}
-                height={620}
-                className="h-full w-full object-cover"
+                src="/images/decorpic4.jpg"
+                alt="Outdoor banquet table with balloon garland and draping"
+                fill
+                className="object-cover"
               />
             </div>
           </div>

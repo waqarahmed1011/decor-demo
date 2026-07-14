@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { testimonials } from "@/lib/content";
-import { ArrowLeftIcon, ArrowRightIcon } from "@/components/icons";
+import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from "@/components/icons";
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -33,12 +33,37 @@ export function Testimonials() {
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
 
-        <div className="min-h-[220px] flex-1 md:min-h-[200px]">
+        <div className="min-h-[260px] flex-1 md:min-h-[240px]">
           <div key={index} className="text-center animate-in fade-in duration-700">
-            <p className="mx-auto max-w-[820px] font-serif text-[18px] leading-[30px] text-white md:text-[20px] md:leading-[32px]">
-              &ldquo;{current.quote}&rdquo;
-            </p>
-            <p className="mt-6 font-serif text-[20px] text-white">{current.name}</p>
+            {/* Stars */}
+            <div className="mb-5 flex justify-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <StarIcon key={i} className="h-[14px] w-[14px] text-brand-accent" />
+              ))}
+            </div>
+
+            {/* Quote with large decorative mark */}
+            <div className="relative">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 select-none font-serif text-[110px] leading-none text-white/8"
+              >
+                &ldquo;
+              </span>
+              <p className="relative mx-auto max-w-[820px] font-serif text-[18px] leading-[30px] text-white md:text-[20px] md:leading-[32px]">
+                {current.quote}
+              </p>
+            </div>
+
+            {/* Attribution */}
+            <div className="mt-7">
+              <p className="font-serif text-[19px] text-white">{current.name}</p>
+              {current.eventType && (
+                <p className="mt-1.5 text-[12px] uppercase tracking-[0.16em] text-white/45">
+                  {current.eventType}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="mt-8 text-center text-[15px] tracking-widest text-white/85">

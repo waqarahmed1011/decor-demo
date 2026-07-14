@@ -25,9 +25,9 @@ const castoro = Castoro({
 });
 
 export const metadata: Metadata = {
-  title: "best event management in Bangalore | event planners - The Perfect Affair",
+  title: "Festive Flair | Event Design & Decor",
   description:
-    "The Perfect Affair — where youth and experience converge for unforgettable celebrations. The best event planners and decorators in Bangalore.",
+    "Festive Flair — where creativity and experience converge for unforgettable celebrations. Premier event design, decor, and coordination for every occasion.",
   icons: {
     icon: "/images/tpa-logo-circle.png",
   },

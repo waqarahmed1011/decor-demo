@@ -13,6 +13,7 @@
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
   --font-heading: var(--font-sans);
   --color-brand: var(--brand);
+  --color-brand-accent: var(--brand-accent);
   --color-brand-dark: var(--brand-dark);
   --color-ink: var(--ink);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -54,10 +55,11 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: #FBF3EE;
   --foreground: oklch(0.145 0 0);
-  /* The Perfect Affair brand tokens */
-  --brand: #3f7065;
+  /* Brand tokens */
+  --brand: #611F2C;
+  --brand-accent: #DE9BA1;
   --brand-dark: #191919;
   --ink: #000000;
   --card: oklch(1 0 0);
@@ -140,41 +142,38 @@
   }
 }
 
-/* ---- The Perfect Affair helpers ---- */
+/* ---- Site helpers ---- */
 
-/* Scroll-reveal (Salient-style fade/rise into view) */
-.tpa-reveal {
+/* Scroll-reveal */
+.site-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(32px);
+  transition: opacity 0.72s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.72s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: opacity, transform;
 }
-.tpa-reveal.is-visible {
+.site-reveal.is-visible {
   opacity: 1;
   transform: none;
 }
+/* Lighter, faster variant for dense grids and card rows */
+.site-reveal.site-reveal--card {
+  transform: translateY(20px);
+  transition-duration: 0.52s;
+}
 
-/* Hero animated word swap */
-@keyframes tpa-word-cycle {
-  0%,
-  40% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  50%,
-  90% {
-    opacity: 0;
-    transform: translateY(-0.4em);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Hero entrance keyframes */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Bouncing scroll indicator */
-@keyframes tpa-scroll-dot {
+@keyframes site-scroll-dot {
   0% {
     transform: translateY(0);
     opacity: 0;
@@ -190,12 +189,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tpa-reveal {
+  .site-reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
   html {
     scroll-behavior: auto;
+  }
+  [style*="hero-fade-up"],
+  [style*="hero-fade-in"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

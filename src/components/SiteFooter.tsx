@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { contact } from "@/lib/content";
+import { InstagramIcon, YoutubeIcon } from "@/components/icons";
+import { Reveal } from "@/components/Reveal";
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -15,16 +17,16 @@ export function SiteFooter() {
       <div
         style={{
           backgroundImage:
-            "linear-gradient(120deg, rgba(63,110,102,0.5) 1%, rgba(255,255,255,0.22) 65%)",
-          backgroundColor: "#ffffff",
+            "linear-gradient(120deg, rgba(222,155,161,0.35) 1%, rgba(251,243,238,0.22) 65%)",
+          backgroundColor: "#FBF3EE",
         }}
       >
         <div className="mx-auto grid max-w-[1425px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-3 lg:px-10 lg:py-20">
           {/* Brand */}
-          <div>
+          <Reveal>
             <Image
-              src="/images/tpa-logo-black.png"
-              alt="The Perfect Affair"
+              src="/images/festive-flair-logo.png"
+              alt="Festive Flair Event Planner"
               width={240}
               height={240}
               className="h-[190px] w-auto"
@@ -34,10 +36,10 @@ export function SiteFooter() {
               <br />
               is truly unforgettable!
             </p>
-          </div>
+          </Reveal>
 
           {/* Address + Quick Links */}
-          <div>
+          <Reveal delay={100}>
             <FooterHeading>Address</FooterHeading>
             <address className="not-italic">
               {contact.address.map((line) => (
@@ -62,10 +64,10 @@ export function SiteFooter() {
                 ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
 
           {/* Connect + Follow */}
-          <div>
+          <Reveal delay={200}>
             <FooterHeading>Connect</FooterHeading>
             <div className="space-y-1">
               {contact.phones.map((phone) => (
@@ -79,27 +81,27 @@ export function SiteFooter() {
             <div className="mt-10">
               <FooterHeading>Follow Us</FooterHeading>
               <div className="flex items-center gap-3">
-                <a href={contact.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-                  <Image src="/images/instagram.png" alt="Instagram" width={40} height={40} className="h-10 w-10" />
+                <a href={contact.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="text-brand transition-opacity hover:opacity-70">
+                  <InstagramIcon className="h-9 w-9" />
                 </a>
-                <a href={contact.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
-                  <Image src="/images/youtube.png" alt="YouTube" width={40} height={40} className="h-10 w-10" />
+                <a href={contact.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="text-brand transition-opacity hover:opacity-70">
+                  <YoutubeIcon className="h-9 w-9" />
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="bg-white">
+      <div className="bg-[#FBF3EE]">
         <div className="mx-auto flex max-w-[1425px] flex-col items-center justify-between gap-2 px-6 py-6 text-[17px] text-black sm:flex-row lg:px-10">
-          <p>© 2026 The Perfect Affair. All Rights Reserved.</p>
+          <p>© 2026 Festive Flair. All Rights Reserved.</p>
           <a
             href="#"
             className="text-black underline decoration-1 underline-offset-4 transition-colors hover:text-brand"
           >
-            Designed by OnWhitePaper
+            Designed by JBW Tech Co
           </a>
         </div>
       </div>

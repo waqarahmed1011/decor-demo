@@ -4,6 +4,7 @@ import { WhoWeAre } from "@/components/WhoWeAre";
 import { TaglineBand } from "@/components/TaglineBand";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
+import { CtaBand } from "@/components/CtaBand";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { EventsSection } from "@/components/EventsSection";
 import { Testimonials } from "@/components/Testimonials";
@@ -20,6 +21,7 @@ export default function Home() {
         <TaglineBand />
         <ServicesSection />
         <ExpertiseSection />
+        <CtaBand />
         <WhyChooseUs />
         <EventsSection />
         <Testimonials />

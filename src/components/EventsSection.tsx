@@ -1,10 +1,22 @@
-import Image from "next/image";
+import {
+  Gem, Crown, Baby, Tag, Cake, Flower2, Home, GraduationCap,
+  Package, Presentation, Heart, Shirt, ShoppingBag, Palette,
+  Sun, Gift, Music2, UtensilsCrossed, HeartHandshake, Moon,
+  Handshake, Sparkles, type LucideIcon,
+} from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { events } from "@/lib/content";
 
+const ICON_MAP: Record<string, LucideIcon> = {
+  Gem, Crown, Baby, Tag, Cake, Flower2, Home, GraduationCap,
+  Package, Presentation, Heart, Shirt, ShoppingBag, Palette,
+  Sun, Gift, Music2, UtensilsCrossed, HeartHandshake, Moon,
+  Handshake, Sparkles,
+};
+
 export function EventsSection() {
   return (
-    <section id="events" className="bg-white py-20 md:py-28">
+    <section id="events" className="bg-background py-20 md:py-28">
       <div className="mx-auto grid max-w-[1425px] gap-12 px-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:px-10">
         {/* Intro */}
         <Reveal>
@@ -17,32 +29,32 @@ export function EventsSection() {
             to your unique vision.
           </p>
           <a
-            href="#footer"
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-brand px-6 py-[15px] text-[18px] text-white transition-opacity hover:opacity-90"
+            href="https://wa.me/17737861127"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center rounded-full bg-brand px-7 py-4 text-[15px] uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-90"
           >
-            <span className="h-px w-6 bg-white/70" />
-            Know More
+            Get in Touch
           </a>
         </Reveal>
 
         {/* Icon grid */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
-          {events.map((event, i) => (
-            <Reveal
-              key={event.label}
-              delay={(i % 4) * 80}
-              className="flex flex-col items-center text-center"
-            >
-              <Image
-                src={event.icon}
-                alt={event.label}
-                width={120}
-                height={120}
-                className="h-[86px] w-auto object-contain md:h-[96px]"
-              />
-              <span className="mt-4 text-[17px] leading-tight text-black">{event.label}</span>
-            </Reveal>
-          ))}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {events.map((event, i) => {
+            const Icon = ICON_MAP[event.icon];
+            return (
+              <Reveal
+                key={event.label}
+                delay={(i % 5) * 60}
+                className="flex flex-col items-center text-center"
+              >
+                {Icon && (
+                  <Icon className="h-[52px] w-[52px] text-brand" strokeWidth={1.25} />
+                )}
+                <span className="mt-3 text-[15px] leading-tight text-black">{event.label}</span>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
