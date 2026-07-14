@@ -10,7 +10,6 @@ export function HeroSection() {
         loop
         muted
         playsInline
-        poster="/images/home-banner.jpg"
       >
         <source src="/videos/home-banner.mp4" type="video/mp4" />
       </video>
